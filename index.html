@@ -11,6 +11,23 @@
   gtag('js', new Date());
 
   gtag('config', 'G-7KXD6E8F0W');
+
+  function nightDay_change(self) {
+    var target = document.querySelector('body');
+    var target2 = document.querySelector('a');
+    if(self.value === 'night mode'){
+    target.style.backgroundColor = 'black';
+    target.style.color='white';
+    target2.style.color='white';
+    self.value = 'day mode';
+    }
+    else {
+    target.style.backgroundColor = 'white';
+    target.style.color='black';
+    target2.style.color='black';
+    self.value = 'night mode';
+    }
+  }
 </script>
 <link rel="stylesheet" href="./style.css">
 <style>
@@ -29,20 +46,7 @@
 <body>
   <div class="bottom-grid">
     <h1><a href="index.html" style="text-decoration : none">Welcome</a></h1>
-    <input type="button" value="night mode" onclick="
-    if(this.value === 'night mode'){
-      var target = document.querySelector('body');
-      var target2 = document.querySelector('a');
-      target.style.backgroundColor = 'black';
-      target.style.color='white';
-      target2.style.color='white';
-      this.value = 'day mode';
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color='black';
-      target2.style.color='black';
-      this.value = 'night mode';
-    }">
+    <input type="button" value="night mode" onclick="nightDay_change(this);">
   </div>
 <div id="grid">
     <ol>

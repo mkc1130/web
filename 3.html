@@ -11,49 +11,40 @@
   gtag('js', new Date());
 
   gtag('config', 'G-7KXD6E8F0W');
+
+  function setColor(target, color) {
+    var temp = document.querySelectorAll(target);
+    i = 0;
+    while (i<temp.length) {
+      temp[i].style.color = color;
+      i=i+1;
+  }
+}
+  function nightDay_change(self) {
+    var target = document.querySelector('body');
+    if(self.value === 'night mode'){
+      target.style.backgroundColor = 'black';
+      setColor('body','white');
+      setColor('a','white');
+      self.value = 'day mode';
+      setColor('.passive', 'white');
+      setColor('.active', 'deepskyblue');
+    } else {
+      target.style.backgroundColor = 'white';
+      setColor('body','black');
+      setColor('a','black');
+      self.value = 'night mode';
+      setColor('.passive', 'black');
+      setColor('.active', 'blue');
+    }
+  }
 </script>
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="bottom-grid">
     <h1><a href="index.html" style="text-decoration : none">Home</a></h1>
-    <input type="button" value="night mode" onclick="
-    var target = document.querySelector('body');
-    var target2 = document.querySelector('a');
-    var target3 = document.querySelectorAll('.passive');
-    var target4 = document.querySelectorAll('.active');
-
-    if(this.value === 'night mode'){
-      target.style.backgroundColor = 'black';
-      target.style.color='white';
-      target2.style.color='white';
-      this.value = 'day mode';
-      var i = 0;
-      while (i<target3.length) {
-        target3[i].style.color = 'white';
-        i=i+1;
-      }
-      i = 0;
-      while (i<target4.length) {
-        target4[i].style.color = 'deepskyblue';
-        i=i+1;
-      }
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color='black';
-      target2.style.color='black';
-      this.value = 'night mode';
-      var i = 0;
-      while (i<target3.length) {
-        target3[i].style.color = 'black';
-        i=i+1;
-      }
-      i = 0;
-      while (i<target4.length) {
-        target4[i].style.color = 'blue';
-        i=i+1;
-      }
-    }">
+    <input type="button" value="night mode" onclick="nightDay_change(this);">
   </div>
   <div id="grid">
   <ol>
