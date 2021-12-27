@@ -20,30 +20,47 @@
     <input type="button" value="night mode" onclick="
     var target = document.querySelector('body');
     var target2 = document.querySelector('a');
+    var target3 = document.querySelectorAll('.passive');
+    var target4 = document.querySelectorAll('.active');
+
     if(this.value === 'night mode'){
       target.style.backgroundColor = 'black';
       target.style.color='white';
       target2.style.color='white';
       this.value = 'day mode';
-      document.querySelector('#grid .passive1').style.color='white';
-      document.querySelector('#grid .passive2').style.color='white';
-      document.querySelector('#grid .passive3').style.color='white';
+      var i = 0;
+      while (i<target3.length) {
+        target3[i].style.color = 'white';
+        i=i+1;
+      }
+      i = 0;
+      while (i<target4.length) {
+        target4[i].style.color = 'deepskyblue';
+        i=i+1;
+      }
     } else {
       target.style.backgroundColor = 'white';
       target.style.color='black';
       target2.style.color='black';
       this.value = 'night mode';
-      document.querySelector('#grid .passive1').style.color='black';
-      document.querySelector('#grid .passive2').style.color='black';
-      document.querySelector('#grid .passive3').style.color='black';
+      var i = 0;
+      while (i<target3.length) {
+        target3[i].style.color = 'black';
+        i=i+1;
+      }
+      i = 0;
+      while (i<target4.length) {
+        target4[i].style.color = 'blue';
+        i=i+1;
+      }
     }">
   </div>
   <div id="grid">
   <ol>
-    <li><a href="1.html" class="passive1">HTML</a></li>
+    <li><a href="1.html" class="passive">HTML</a></li>
     <li><a href="2.html" class="active">CSS</a></li>
-    <li><a href="3.html" class="passive2">JavaScript</a></li>
-    <li><a href="4.html" class="passive3">PHP</a></li>
+    <li><a href="3.html" class="passive">JavaScript</a></li>
+    <li><a href="4.html" class="passive">PHP</a></li>
   </ol>
   <div id="article">
   <h2>What is CSS?</h2>
