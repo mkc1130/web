@@ -29,14 +29,18 @@
 <body>
   <div class="bottom-grid">
     <h1><a href="index.html" style="text-decoration : none">Welcome</a></h1>
-    <input type="button" value="Night" onclick="
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color='white';
-    document.querySelector('a').style.color='white';">
-    <input type="button" value="Day" onclick="
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color='black';
-    document.querySelector('a').style.color='black';">
+    <input type="button" value="night mode" onclick="
+    if(this.value === 'night mode'){
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color='white';
+      document.querySelector('a').style.color='white';
+      this.value = 'day mode';
+    } else {
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color='black';
+      document.querySelector('a').style.color='black';
+      this.value = 'night mode';
+    }">
   </div>
 <div id="grid">
     <ol>

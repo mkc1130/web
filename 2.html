@@ -17,20 +17,26 @@
 <body>
   <div class="bottom-grid">
     <h1><a href="index.html" style="text-decoration : none">Home</a></h1>
-    <input type="button" value="Night" onclick="
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color='white';
-    document.querySelector('a').style.color='white';
-    document.querySelector('#grid .passive1').style.color='white';
-    document.querySelector('#grid .passive2').style.color='white';
-    document.querySelector('#grid .passive3').style.color='white';">
-    <input type="button" value="Day" onclick="
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color='black';
-    document.querySelector('a').style.color='black';
-    document.querySelector('#grid .passive1').style.color='black';
-    document.querySelector('#grid .passive2').style.color='black';
-    document.querySelector('#grid .passive3').style.color='black';">
+    <input type="button" value="night mode" onclick="
+    var target = document.querySelector('body');
+    var target2 = document.querySelector('a');
+    if(this.value === 'night mode'){
+      target.style.backgroundColor = 'black';
+      target.style.color='white';
+      target2.style.color='white';
+      this.value = 'day mode';
+      document.querySelector('#grid .passive1').style.color='white';
+      document.querySelector('#grid .passive2').style.color='white';
+      document.querySelector('#grid .passive3').style.color='white';
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color='black';
+      target2.style.color='black';
+      this.value = 'night mode';
+      document.querySelector('#grid .passive1').style.color='black';
+      document.querySelector('#grid .passive2').style.color='black';
+      document.querySelector('#grid .passive3').style.color='black';
+    }">
   </div>
   <div id="grid">
   <ol>
